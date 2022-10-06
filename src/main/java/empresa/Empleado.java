@@ -1,16 +1,21 @@
 package empresa;
 
-public class Persona {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Empleado {
     int documento;
+    String tipoDocumento;
     String nombre;
     String direccion;
-    int numeroLegajo;
+    float numeroLegajo;
     int antiguedad;
-    int sueldoBasico;
+    List<Double> sueldoBasico;
 
     // Constructor
-    Persona(int documento, String nombre, String direccion, int numeroLegajo, int antiguedad, int sueldoBasico){
+    public Empleado(int documento, String tipoDocumento, String nombre, String direccion, float numeroLegajo, int antiguedad, ArrayList<Double> sueldoBasico){
         this.documento = documento;
+        this.tipoDocumento = tipoDocumento;
         this.nombre = nombre;
         this.direccion = direccion;
         this.numeroLegajo = numeroLegajo;
@@ -19,12 +24,12 @@ public class Persona {
     }
 
     public String toString(){
-        return "Documento: " + documento + "\n" + "Nombre: " + nombre + "\n" + "Direccion: " + direccion + "\n" +
-                "Numero Legajo: " + numeroLegajo + "\n" + "Antiguedad: " + antiguedad + "\n" + "Sueldo Basico: " + sueldoBasico;
+        return "Tipo documento: " + tipoDocumento + "\n" + "Documento: " + documento + "\n" + "Nombre: " + nombre + "\n" + "Direccion: " + direccion + "\n" +
+                "Numero Legajo: " + numeroLegajo + "\n" + "Antiguedad: " + antiguedad + "\n" + "Sueldo Basico: " + (sueldoBasico.get(1) + sueldoBasico.get(2));
     }
 
-    public String equals(Persona obj){
-        if(this.documento == obj.documento){
+    public String equals(Empleado obj){
+        if(this.documento == obj.documento && this.tipoDocumento == obj.tipoDocumento){
             return "Las personas son iguales";
         } else {
             return "Las personas no son iguales";
@@ -32,7 +37,7 @@ public class Persona {
     }
 
     public String calcularSueldo(){
-        int sueldo = sueldoBasico * antiguedad;
-        return "El sueldo es de: " + sueldo;
+        double sueldo = sueldoBasico.get(2) * antiguedad;
+        return "El sueldo mensual de " + this.nombre + " es de: " + sueldo;
     }
 }

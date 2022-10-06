@@ -1,5 +1,5 @@
 package empresa;
 
-public enum String {
+public enum TipoDocumento {
     DNI, PASAPORTE, LICENCIA
 }
