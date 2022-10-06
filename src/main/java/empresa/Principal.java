@@ -17,7 +17,7 @@ public class Principal {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("--- MENU ---" + "\n" + "1) Agregar nuevo empleado" + "\n" + "2) Ver lista de empleados" + "\n" + "3) Ver sueldo de cada empleado" + "\n" + "4) Cerrar" + "\n" + "Ingrese una opcion: ");
+        System.out.print("--- MENU ---" + "\n" + "1) Agregar nuevo empleadoo" + "\n" + "2) Ver lista de empleados" + "\n" + "3) Ver sueldo de cada empleado" + "\n" + "4) Cerrar" + "\n" + "Ingrese una opcion: ");
         int opcion = scanner.nextInt();
 
         if(opcion == 1){
